@@ -1,0 +1,292 @@
+@import url("terminal.css");
+@import url("sidebar.css");
+/* @import url("../assets/fonts/pokemon_classic/Pokemon/Classic.ttf"); */
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --dh-orange: #e77236;
+}
+
+body,
+.carousel__content.icon img:hover,
+a:hover,
+button:hover {
+  cursor: url(../assets/bitmap/cursor-pointer-finger.png), auto;
+}
+
+@font-face {
+  font-family: "Chintzy";
+  font-style: normal;
+  src: url(../assets/fonts/Chintzy/chintzy.ttf) format("ttf");
+}
+
+@font-face {
+  font-family: "Pokemon Classic";
+  font-style: normal;
+  src: url(../assets/fonts/pokemon_classic/Pokemon\ Classic.ttf) format("ttf");
+}
+
+@layer components {
+  .btn {
+    letter-spacing: 0.15438;
+    @apply w-36 h-9 flex-shrink-0 bg-light-gray-dh text-black-dh font-space-mono font-bold text-center;
+  }
+}
+
+canvas {
+  display: block;
+}
+
+.paragraph::before {
+  content: "";
+  width: 2em;
+  display: block;
+  height: 2.6em;
+  position: absolute;
+  z-index: -1;
+  transform: translateX(-11px) translateX(0px);
+  @apply bg-orange-dh;
+}
+
+.shadow--solid__about-me::before {
+  content: "A Bit About Me";
+  width: fit-content;
+  position: absolute;
+  z-index: -1;
+  transform: translateX(-8px) translatey(4px);
+  @apply text-orange-dh;
+}
+.shadow--solid__ashley::before {
+  content: "ASHLEY";
+  width: fit-content;
+  position: absolute;
+  z-index: -1;
+  transform: translateX(-5px) translatey(3px);
+  @apply text-orange-dh;
+}
+.shadow--solid__portfolio::before {
+  content: "Portfolio";
+  width: fit-content;
+  position: absolute;
+  z-index: -1;
+  transform: translateX(-5px) translatey(3px);
+  @apply text-orange-dh;
+}
+
+.hero__name {
+  grid-area: name;
+}
+
+.hero__intro {
+  grid-area: intro;
+}
+
+.hero__cta {
+  grid-area: cta;
+}
+
+.hero__tagline {
+  grid-template-areas:
+    "name"
+    "intro"
+    "cta";
+}
+
+.scrollbar {
+  &::-webkit-scrollbar {
+    width: 0.5em;
+  }
+  &::-webkit-scrollbar-track {
+    margin-block: 0.5em;
+    /* border-radius: 25vw; */
+  }
+  &::-webkit-scrollbar-thumb {
+    /* border-radius: 25vw; */
+    transition: background-color 250000ms;
+  }
+  &::-webkit-scrollbar-thumb:hover {
+    /* border-radius: 25vw; */
+  }
+  &::-webkit-scrollbar {
+    width: 0.5em;
+  }
+  &::-webkit-scrollbar-track {
+    margin-block: 0.5em;
+    /* border-radius: 25vw; */
+  }
+  &::-webkit-scrollbar-thumb {
+    /* border-radius: 25vw; */
+    transition: background-color 250000ms;
+  }
+  &::-webkit-scrollbar-thumb:hover {
+    /* border-radius: 25vw; */
+  }
+  &:hover {
+    &::-webkit-scrollbar-track {
+      background-color: rgba(128, 128, 128, 0.08);
+    }
+    &::-webkit-scrollbar-thumb {
+      background-color: rgba(221, 226, 221, 0.885);
+    }
+    &::-webkit-scrollbar {
+      opacity: 100%;
+      width: 0.5em;
+    }
+  }
+}
+
+/* dialog bg*/
+.bg__grid {
+  position: absolute;
+  z-index: -1;
+  display: grid;
+  width: 100%;
+  height: 100%;
+  grid-template-columns: repeat(24, 1fr);
+  /* grid-template-rows: repeat(24, 1fr); */
+}
+
+.bg__block {
+  border: solid 0.1px rgb(114, 219, 49, 0.2);
+  background-color: rgb(114, 219, 49, 0);
+  transition: background-color 0.2s;
+
+  &:hover {
+    /* opacity: 100%; */
+    /* animation: float .5s; */
+    background-color: rgb(114, 219, 49, 1);
+  }
+}
+
+/* Nav Menu Underline */
+.dh_underline::before {
+  transform: scaleX(0);
+  transform-origin: bottom right;
+}
+
+.dh_underline:hover::before {
+  transform: scaleX(1);
+  transform-origin: bottom left;
+}
+
+.dh_underline::before {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  inset: 0 0 0 0;
+  border-bottom: solid 3.6px;
+  z-index: -1;
+  transition: transform 0.3s ease;
+  border-bottom-color: var(--dh-orange);
+}
+
+.dh_underline {
+  position: relative;
+  width: fit-content;
+}
+/* Nav Menu Underline */
+
+/* carousel */
+.carousel__content.icon {
+  filter: grayscale(100%);
+  opacity: 25%;
+}
+.carousel {
+  -webkit-mask: linear-gradient(
+    90deg,
+    transparent,
+    white 5%,
+    white 95%,
+    transparent
+  );
+  mask: linear-gradient(90deg, transparent, white 5%, white 95%, transparent);
+}
+
+.carousel[data-animated="true"] .carousel__content {
+  flex-wrap: nowrap;
+  animation: scroll2 var(--_animation-duration, 40s)
+    var(--_animation-direction, forwards) linear infinite;
+}
+
+.carousel[data-direction="right"] {
+  --_animation-direction: reverse;
+}
+
+.carousel[data-direction="left"] {
+  --_animation-direction: forwards;
+}
+
+.carousel[data-speed="fast"] {
+  --_animation-duration: 2s;
+}
+
+.carousel[data-speed="slow"] {
+  --_animation-duration: 40s;
+}
+
+.carousel__content img:hover {
+  cursor: url(../assets/vectors/smiley.svg), auto;
+}
+.carousel__content:hover {
+  filter: invert(90%);
+}
+
+.carousel:hover {
+  animation: none;
+}
+
+@keyframes scroll {
+  to {
+    transform: translate(-50%);
+  }
+}
+@keyframes scroll2 {
+  from {
+    transform: translateX(0%);
+  }
+  to {
+    transform: translateX(-100%);
+  }
+}
+@keyframes translateinfinite {
+	100% { transform:translateX(calc(-180px * 12));  }
+}
+/* carousel */
+
+@media only screen and (min-width: 1024px) {
+  div.hero__tagline {
+    grid-template-areas:
+      "name"
+      "intro"
+      "cta";
+    grid-template-columns: 1fr;
+    justify-items: end;
+  }
+  div.hero__cta {
+    justify-self: end;
+    padding-left: 0;
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  .hero__tagline {
+    grid-template-areas:
+      "name cta"
+      "intro cta";
+    justify-items: center;
+    grid-template-columns: 1fr 0.5fr;
+  }
+
+  .hero__cta {
+    padding-left: 0.25rem;
+    align-self: center;
+    justify-self: start;
+  }
+}

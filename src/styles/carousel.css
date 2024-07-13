@@ -1,0 +1,58 @@
+body,
+.carousel__content.icon img:hover,
+a:hover,
+button:hover {
+  cursor: url(../assets/bitmap/cursor-pointer-finger.png), auto;
+}
+
+.carousel__content.icon {
+  filter: grayscale(100%);
+  opacity: 25%;
+}
+.carousel {
+  -webkit-mask: linear-gradient(
+    90deg,
+    transparent,
+    white 5%,
+    white 95%,
+    transparent
+  );
+  mask: linear-gradient(90deg, transparent, white 5%, white 95%, transparent);
+}
+
+.carousel[data-animated="true"] .carousel__content__wrapper {
+  width: max-content;
+  flex-wrap: nowrap;
+  animation: scroll var(--_animation-duration, 14s)
+    var(--_animation-direction, forwards) linear infinite;
+  &:hover {
+    animation-play-state: paused;
+  }
+}
+
+.carousel[data-direction="right"] {
+  --_animation-direction: reverse;
+}
+
+.carousel[data-direction="left"] {
+  --_animation-direction: forwards;
+}
+
+.carousel[data-speed="fast"] {
+  --_animation-duration: 6s;
+}
+
+.carousel[data-speed="slow"] {
+  --_animation-duration: 9s;
+}
+
+.carousel__content img:hover {
+  cursor: url(../assets/vectors/smiley.svg), auto;
+}
+.carousel__content:hover {
+  filter: invert(90%);
+}
+
+.carousel:hover {
+  animation: none;
+}

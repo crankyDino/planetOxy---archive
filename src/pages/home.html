@@ -1,0 +1,393 @@
+
+<canvas id="matrix__rain" style="
+    position: absolute;
+    z-index: -9;
+    margin: 0;
+    width: 100%;
+    opacity: 33%;
+    ">
+</canvas>
+
+
+<!-- ANTIHERO -->
+<section id="antihero"
+    class="container flex flex-col lg:flex-row justify-between justify-items-end items-center gap-8 m-auto pb-24 px-4 md:px-24">
+    <!-- terminal -->
+    <div id="terminal_window" class="terminal overflow-hidden w-full">
+        <div class="terminal__window__navbar">
+            <div style="display: flex" class="terminal__title">
+                <svg class="terminal__icon" viewBox="0 0 14 9" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M0.576172 0.539429H12.7502V7.58287H0.576172V0.539429Z" fill="#1E1E1E" stroke="#D9D9D9" />
+                    <rect x="0.187305" y="0.0925781" width="12.9833" height="1.13687" fill="#34597D" stroke="#D9D9D9"
+                        stroke-width="0.1" />
+                    <rect x="10.8501" y="0.279297" width="0.599085" height="0.763408" fill="#D9D9D9" />
+                    <line x1="10.9395" y1="0.861426" x2="11.3601" y2="0.861426" stroke="black" stroke-width="0.2" />
+                    <rect x="11.6318" y="0.271606" width="0.611012" height="0.778607" fill="#D9D9D9" />
+                    <rect x="11.7586" y="0.562426" width="0.356255" height="0.348869"
+                        transform="rotate(-0.168606 11.7586 0.562426)" stroke="black" stroke-width="0.1" />
+                    <line x1="11.71" y1="0.461206" x2="12.1662" y2="0.461206" stroke="black" stroke-width="0.3" />
+                    <rect x="12.4248" y="0.279297" width="0.599085" height="0.763408" fill="#D9D9D9" />
+                    <path
+                        d="M12.9165 0.78468L12.7871 0.726726L12.9165 0.668771L12.892 0.620797L12.7244 0.696868L12.5568 0.620797L12.5322 0.668771L12.6616 0.726726L12.5322 0.78468L12.5568 0.832654L12.7244 0.756584L12.892 0.832654L12.9165 0.78468ZM12.6609 0.603688C12.6609 0.603688 12.6608 0.64621 12.6703 0.64621H12.7784C12.7878 0.64621 12.7878 0.603688 12.7878 0.603688C12.8027 0.603688 12.813 0.587501 12.8226 0.576681C12.8384 0.558733 12.8479 0.536424 12.8479 0.512017C12.8479 0.452721 12.7925 0.404663 12.7244 0.404663C12.6562 0.404663 12.6008 0.452721 12.6008 0.512017C12.6008 0.536424 12.6103 0.558733 12.6261 0.576681C12.6357 0.587501 12.6478 0.603856 12.6609 0.603688ZM12.7706 0.489708C12.7871 0.488701 12.8009 0.502037 12.7998 0.518224C12.7989 0.531559 12.7878 0.542378 12.7742 0.543217C12.7576 0.544224 12.7439 0.530888 12.745 0.514701C12.7459 0.50145 12.757 0.490546 12.7706 0.489708ZM12.6745 0.489708C12.6911 0.488701 12.7048 0.502037 12.7037 0.518224C12.7028 0.531559 12.6918 0.542378 12.6781 0.543217C12.6616 0.544224 12.6478 0.530888 12.649 0.514701C12.6498 0.50145 12.6609 0.490546 12.6745 0.489708Z"
+                        fill="#F16A24" />
+                    <path
+                        d="M5.29743 5.04643C5.22943 5.39843 5.06743 5.68243 4.81143 5.89843C4.55943 6.11443 4.22143 6.22243 3.79743 6.22243C3.57743 6.22243 3.37143 6.18843 3.17943 6.12043C2.99143 6.05243 2.82743 5.95443 2.68743 5.82643C2.54743 5.69843 2.43743 5.54043 2.35743 5.35243C2.27743 5.16443 2.23743 4.95043 2.23743 4.71043V4.63843C2.23743 4.39843 2.27743 4.18243 2.35743 3.99043C2.43743 3.79843 2.54743 3.63443 2.68743 3.49843C2.83143 3.36243 2.99743 3.25843 3.18543 3.18643C3.37743 3.11443 3.58143 3.07843 3.79743 3.07843C4.21343 3.07843 4.54943 3.18643 4.80543 3.40243C5.06543 3.61843 5.22943 3.90243 5.29743 4.25443L4.55343 4.44643C4.52943 4.27043 4.45343 4.11843 4.32543 3.99043C4.19743 3.86243 4.01743 3.79843 3.78543 3.79843C3.67743 3.79843 3.57543 3.81843 3.47943 3.85843C3.38343 3.89843 3.29943 3.95643 3.22743 4.03243C3.15543 4.10443 3.09743 4.19443 3.05343 4.30243C3.01343 4.40643 2.99343 4.52443 2.99343 4.65643V4.69243C2.99343 4.82443 3.01343 4.94243 3.05343 5.04643C3.09743 5.14643 3.15543 5.23043 3.22743 5.29843C3.29943 5.36643 3.38343 5.41843 3.47943 5.45443C3.57543 5.48643 3.67743 5.50243 3.78543 5.50243C4.01743 5.50243 4.19343 5.44443 4.31343 5.32843C4.43743 5.21243 4.51743 5.05643 4.55343 4.86043L5.29743 5.04643Z"
+                        fill="#72DB31" />
+                    <path
+                        d="M7.78051 5.65243C7.78051 5.73243 7.76451 5.80843 7.73251 5.88043C7.70451 5.94843 7.66451 6.00843 7.61251 6.06043C7.56051 6.10843 7.49851 6.14643 7.42651 6.17443C7.35851 6.20643 7.28651 6.22243 7.21051 6.22243C7.13051 6.22243 7.05651 6.20643 6.98851 6.17443C6.92051 6.14643 6.86051 6.10843 6.80851 6.06043C6.75651 6.00843 6.71451 5.94843 6.68251 5.88043C6.65451 5.80843 6.64051 5.73243 6.64051 5.65243C6.64051 5.57243 6.65451 5.49843 6.68251 5.43043C6.71451 5.35843 6.75651 5.29843 6.80851 5.25043C6.86051 5.19843 6.92051 5.15843 6.98851 5.13043C7.05651 5.09843 7.13051 5.08243 7.21051 5.08243C7.28651 5.08243 7.35851 5.09843 7.42651 5.13043C7.49851 5.15843 7.56051 5.19843 7.61251 5.25043C7.66451 5.29843 7.70451 5.35843 7.73251 5.43043C7.76451 5.49843 7.78051 5.57243 7.78051 5.65243ZM7.78051 3.64843C7.78051 3.72843 7.76451 3.80443 7.73251 3.87643C7.70451 3.94443 7.66451 4.00443 7.61251 4.05643C7.56051 4.10443 7.49851 4.14443 7.42651 4.17643C7.35851 4.20443 7.28651 4.21843 7.21051 4.21843C7.13051 4.21843 7.05651 4.20443 6.98851 4.17643C6.92051 4.14443 6.86051 4.10443 6.80851 4.05643C6.75651 4.00443 6.71451 3.94443 6.68251 3.87643C6.65451 3.80443 6.64051 3.72843 6.64051 3.64843C6.64051 3.56843 6.65451 3.49443 6.68251 3.42643C6.71451 3.35443 6.75651 3.29443 6.80851 3.24643C6.86051 3.19443 6.92051 3.15443 6.98851 3.12643C7.05651 3.09443 7.13051 3.07843 7.21051 3.07843C7.28651 3.07843 7.35851 3.09443 7.42651 3.12643C7.49851 3.15443 7.56051 3.19443 7.61251 3.24643C7.66451 3.29443 7.70451 3.35443 7.73251 3.42643C7.76451 3.49443 7.78051 3.56843 7.78051 3.64843Z"
+                        fill="#72DB31" />
+                    <path d="M10.7715 6.29266L10.1965 6.47266L8.70155 1.90266L9.27155 1.72266L10.7715 6.29266Z"
+                        fill="#72DB31" />
+                </svg>
+                <p class="terminal-window__title">Terminal</p>
+            </div>
+            <div class="terminal__navbar__controls">
+                <button class="terminal__min">
+                    <svg style="margin-top: auto" class="terminal__control-icon" viewBox="0 0 16 2" fill="none"
+                        xmlns="http://www.w3.org/2000/svg" style="padding: 0px 2px">
+                        <line x1="0.271972" y1="0.925903" x2="15.7168" y2="0.925898" stroke="black"
+                            stroke-width="1.5" />
+                    </svg>
+                </button>
+                <button class="terminal__expand">
+                    <svg class="terminal__control-icon" viewBox="0 0 16 17" fill="none"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <rect x="0.501424" y="0.49848" width="14.4447" height="14.8238"
+                            transform="matrix(0.999995 -0.00303585 0.00285244 0.999996 0.158737 0.877257)"
+                            stroke="black" />
+                        <line x1="0.182617" y1="3.34705" x2="15.6274" y2="3.34704" stroke="black" stroke-width="4" />
+                    </svg>
+                </button>
+                <button class="terminal__close">
+                    <svg class="terminal__control-icon" viewBox="0 0 15 17" fill="none"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <path
+                            d="M14.8704 14.8416L10.1213 12.6256L14.8704 10.4096L13.9697 8.57528L7.81607 11.484L1.66241 8.57528L0.761719 10.4096L5.51081 12.6256L0.761719 14.8416L1.66241 16.676L7.81607 13.7673L13.9697 16.676L14.8704 14.8416ZM5.48562 7.92107C5.48562 7.92107 5.48247 9.54698 5.83204 9.54698H9.80011C10.1465 9.54698 10.1465 7.92107 10.1465 7.92107C10.6914 7.92107 11.0724 7.30213 11.422 6.88844C12.0046 6.20216 12.351 5.34911 12.351 4.4159C12.351 2.1486 10.3197 0.311035 7.81607 0.311035C5.31241 0.311035 3.28113 2.1486 3.28113 4.4159C3.28113 5.34911 3.62755 6.20216 4.21016 6.88844C4.55973 7.30213 5.00693 7.92748 5.48562 7.92107ZM9.51353 3.56286C10.1213 3.52437 10.6252 4.03427 10.5843 4.65321C10.5528 5.16311 10.1465 5.57681 9.6458 5.60887C9.03799 5.64736 8.53411 5.13746 8.57505 4.51852C8.60654 4.01183 9.01279 3.59493 9.51353 3.56286ZM5.98635 3.56286C6.59416 3.52437 7.09804 4.03427 7.0571 4.65321C7.02561 5.16311 6.61935 5.57681 6.11862 5.60887C5.51081 5.64736 5.00693 5.13746 5.04787 4.51852C5.07936 4.01183 5.48562 3.59493 5.98635 3.56286Z"
+                            fill="#1E1E1E" />
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <div id="terminal_screen" style="height: 82%" class="terminal__screen scrollbar">
+            <h6 class="terminal__art">
+                <pre style="line-height: normal;" class="green terminal--art">
+    ____  _       _ __        __   __  ___                 
+   / __ \(_)___ _(_) /_____ _/ /  / / / (_)___  ____  (_)__ 
+  / / / / / __ `/ / __/ __ `/ /  / /_/ / / __ \/ __ \/ / _ \
+ / /_/ / / /_/ / / /_/ /_/ / /  / __  / / /_/ / /_/ / /  __/
+/_____/_/\__, /_/\__/\__,_/_/  /_/ /_/_/ .___/ .___/_/\___/ 
+        /____/                        /_/   /_/     © <span id="terminal-date">2023</span>
+                   </pre>
+            </h6>
+
+            <p class="terminal__text">Welcome...</p>
+            <p class="terminal__text">
+                For assistance, please type
+                <strong class="terminal__text">Help</strong>
+            </p>
+            <div id="terminal_input_area_container" class="terminal__input-area__container">
+                <div id="terminal_input_area" data-rowid="0" class="terminal__cli">
+                    <p class="terminal__text">
+                        guest@<strong class="terminal__text"><a href="https://www.digitalhippie.xyz" target="_blank"
+                                class="terminal__text">digitalhippie.xyz</a></strong>:~$
+                    </p>
+                    <span id="terminal_input" class="cli terminal__text" type="text"></span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div
+        class="hero__tagline grid md:grid-flow-col md:gap-x-4 lg:gap-7 justify-items-center sm:justify-items-end md:items-start xl:items-end lg:w-[47vw] h-full text-white-dh">
+        <div class="hero__name flex flex-col h-fit justify-start lg:w-fit md:w-[88%]">
+            <p class="text-nowrap font-space-mono text-lg">Hi, I'm</p>
+            <div class=" flex flex-row justify-right">
+                <h1 class="shadow--solid__ashley font-pokemon-classic font-bold text-3xl pl-6">
+                    ASHLEY.
+                </h1>
+            </div>
+        </div>
+        <!-- <div class="w-full flex md:flex-row lg:flex-col flex-col md:justify-center items-end gap-4"> -->
+        <p
+            class="hero__intro  mb-2 text-justify sm:text-right font-space-mono text-xl w-4/5 sm:w-4/6 md:w-[88%] xl:w-4/5 xl:text-end lg:w-full md:text-justify">
+            <strong class="text-orange-dh">I Make</strong>
+            cool websites, take pretty pictures and film epic videos
+        </p>
+
+        <div class="hero__cta w-max flex flex-row sm:flex-col lg:flex-row xl:flex-col gap-3 justify-even content-end">
+            <button class="btn bg-orange-dh text-white-dh">
+                <a href="">PROJECTS</a>
+            </button>
+            <button id="btnOpenHmuForm" class="btn bg-transparent border-[3px] border-orange-dh text-white-dh">
+                HIT ME UP!
+            </button>
+        </div>
+        <!-- </div> -->
+    </div>
+</section>
+
+<!-- about me -->
+<section
+    class="container flex flex-col md:flex-row justify-between justify-items-end items-center gap-2 m-auto mb-2 px-8 md:px-16 lg:pl-32">
+    <div id="about_me" class="w-full md:w-3/4 col-auto text-white-dh space-y-5">
+        <h2 style="word-spacing: -0.5rem; letter-spacing: 3.6px" id="about_me_headline"
+            class="shadow--solid__about-me font-semibold mb-4 !font-pokemon-classic text-[10vw] md:text-4xl lg:text-5xl">
+            A
+            <!-- <strong
+        class="text-orange-dh font-hanuman text-[10vw] md:text-5xl lg:text-6xl"
+        >Bit</strong
+      > -->
+            Bit About Me
+        </h2>
+        <p
+            class="paragraph text-justify md:!mt-auto md:text-start md:w-11/12 lg:w-3/5 font-space-mono mb-2 before:w-8 first-letter:text-[2rem] first-letter:font-bold">
+            I am a self-taught Web Developer, Graphic Designer and Videographer
+            from South Africa. I also enjoy playing around with Machine Learning
+            and Blockchain technologies. I made this website using vanilla
+            HTML/CSS & Javascript.
+        </p>
+
+        <div class="skills w-full mb-1">
+            <h3 class="text-orange-dh font-space-mono font-bold text-base md:text-2xl">
+                Technologies I've worked with
+            </h3>
+            <ul style="line-height: 1.5em"
+                class="flex flex-col flex-wrap pl-1.5 m-0 max-w-80 h-24 font-space-mono list-none overflow-hidden">
+                <li>> Angular</li>
+                <li>> ASP.NET</li>
+                <li>> MySQL</li>
+                <li>> Azure</li>
+                <!--  -->
+                <li>> Figma</li>
+                <li>> DaVinci Resolve</li>
+                <li>> Corel Draw</li>
+                <li>> Blender</li>
+            </ul>
+        </div>
+
+        <button class="btn bg-orange-dh border-[3px] border-orange-dh text-white-dh">
+            View CV
+        </button>
+    </div>
+    <div id="pictureFrame" style="width: fit-content" class="m-auto relative mr-[2%] col-start-2 col-span-2">
+        <div>
+            <img class="headshot w-36 relative z-[-1]" src="../assets/bitmap/IMG_20200408_170956paint.jpg" alt="" />
+            <span style="transform: translateX(-42%) translateY(-89%)" id="pictureFrame"
+                class="w-36 absolute z-[-2] left-9">
+                <svg class="pictureFrame" width="175" height="215" viewBox="0 0 175 245" fill="none"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <path d="M0.844727 1.40002H173.876V243.621H0.844727V1.40002Z" stroke="#E77236" stroke-width="4" />
+                </svg>
+            </span>
+        </div>
+    </div>
+</section>
+
+<section class="grid grid-rows-1 pt-8">
+    <h3
+        class="shadow--solid__portfolio font-pokemon-classic container pb-2 text-center mb-2 px-8 md:px-16 lg:pl-32 text-white-dh text-[8vw] md:text-2xl lg:text-4xl">
+        Portfolio
+    </h3>
+    <div class="carousel overflow-hidden pl-1.5 w-[85vw] m-auto">
+        <div class="carousel__content__wrapper flex flex-row flex-wrap gap-3 items-center">
+            <div class="carousel__content">
+                <img class="carousel__image h-fit w-[12rem] max-w-[14rem]" src="../assets/bitmap/beat tape cover.jpg"
+                    alt="" />
+                <div class="carousel__label w-fit pl-2">
+                    <h6 class="text-orange-dh font-space-mono text-lg w-[80%]">
+                        Rareclub
+                    </h6>
+                    <p class="text-sm text-gray-400 w-fit">poster</p>
+                    <p class="text-sm text-gray-400 w-fit">2020</p>
+                </div>
+            </div>
+            <div class="carousel__content">
+                <img class="carousel__image h-fit w-[12rem] max-w-[14rem]"
+                    src="../assets/bitmap/Black Coke Media -- Logo.jpg" alt="" />
+                <div class="carousel__label w-fit pl-2">
+                    <h6 class="text-orange-dh font-space-mono text-lg w-[80%]">
+                        Rareclub
+                    </h6>
+                    <p class="text-sm text-gray-400 w-fit">poster</p>
+                    <p class="text-sm text-gray-400 w-fit">2020</p>
+                </div>
+            </div>
+            <div class="carousel__content">
+                <img class="carousel__image h-fit w-[12rem] max-w-[14rem]"
+                    src="../assets/bitmap/Elevation Sign Mockup.png" alt="" />
+                <div class="carousel__label w-fit pl-2">
+                    <h6 class="text-orange-dh font-space-mono text-lg w-[80%]">
+                        Rareclub
+                    </h6>
+                    <p class="text-sm text-gray-400 w-fit">poster</p>
+                    <p class="text-sm text-gray-400 w-fit">2020</p>
+                </div>
+            </div>
+            <div class="carousel__content">
+                <img class="carousel__image h-fit w-[12rem] max-w-[14rem]" src="../assets/bitmap/Untitled-2.png"
+                    alt="" />
+                <div class="carousel__label w-fit">
+                    <h6 class="text-orange-dh font-space-mono text-lg w-[80%]">
+                        Rareclub
+                    </h6>
+                    <p class="text-sm text-gray-400 w-fit">poster</p>
+                    <p class="text-sm text-gray-400 w-fit">2020</p>
+                </div>
+            </div>
+            <div class="carousel__content">
+                <img class="carousel__image h-fit w-[12rem] max-w-[14rem]" src="../assets/bitmap/beat tape cover.jpg"
+                    alt="" />
+                <div class="carousel__label w-fit pl-2">
+                    <h6 class="text-orange-dh font-space-mono text-lg w-[80%]">
+                        Rareclub
+                    </h6>
+                    <p class="text-sm text-gray-400 w-fit">poster</p>
+                    <p class="text-sm text-gray-400 w-fit">2020</p>
+                </div>
+            </div>
+            <div class="carousel__content">
+                <img class="carousel__image h-fit w-[12rem] max-w-[14rem]" src="../assets/bitmap/skate_reel.jpg"
+                    alt="" />
+                <div class="carousel__label w-fit pl-2">
+                    <h6 class="text-orange-dh font-space-mono text-lg w-[80%]">
+                        Rareclub
+                    </h6>
+                    <p class="text-sm text-gray-400 w-fit">poster</p>
+                    <p class="text-sm text-gray-400 w-fit">2020</p>
+                </div>
+            </div>
+            <div class="carousel__content">
+                <img class="carousel__image h-fit w-[12rem] max-w-[14rem]"
+                    src="../assets/bitmap/Elevation Sign Mockup.png" alt="" />
+                <div class="carousel__label w-fit pl-2">
+                    <h6 class="text-orange-dh font-space-mono text-lg w-[80%]">
+                        Rareclub
+                    </h6>
+                    <p class="text-sm text-gray-400 w-fit">poster</p>
+                    <p class="text-sm text-gray-400 w-fit">2020</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="grid grid-rows-1 py-12">
+    <div class="carousel items-center overflow-hidden pl-1.5" data-direction="right">
+        <div class="carousel__content__wrapper gap-6 flex flex-row">
+            <div class="carousel__content icon">
+                <img class="carousel__image h-fit w-[4rem] max-w-[4rem]"
+                    src="../assets/vectors/logos/adobe-illustrator.svg" alt="" />
+            </div>
+            <div class="carousel__content icon">
+                <span class="fab fa-angular"></span>
+            </div>
+            <div class="carousel__content icon">
+                <img class="carousel__image h-fit w-[4rem] max-w-[4rem]"
+                    src="../assets/vectors/logos/adobe-photoshop.svg" alt="" />
+            </div>
+            <div class="carousel__content icon">
+                <img class="carousel__image h-fit w-[4rem] max-w-[4rem]" src="../assets/vectors/logos/android.svg"
+                    alt="" />
+            </div>
+            <div class="carousel__content icon">
+                <img class="carousel__image h-fit w-[4rem] max-w-[4rem]" src="../assets/vectors/logos/html5.svg"
+                    alt="" />
+            </div>
+            <div class="carousel__content icon">
+                <img class="carousel__image h-fit w-[4rem] max-w-[4rem]" src="../assets/vectors/logos/css3.svg"
+                    alt="" />
+            </div>
+            <div class="carousel__content icon">
+                <img class="carousel__image h-fit w-[4rem] max-w-[4rem]" src="../assets/vectors/logos/blender.svg"
+                    alt="" />
+            </div>
+            <div class="carousel__content icon">
+                <img class="carousel__image h-fit w-[4rem] max-w-[4rem]" src="../assets/vectors/logos/javascript.svg"
+                    alt="" />
+            </div>
+            <div class="carousel__content icon">
+                <img class="carousel__image h-fit w-[4rem] max-w-[4rem]" src="../assets/vectors/logos/figma.svg"
+                    alt="" />
+            </div>
+            <div class="carousel__content icon">
+                <img class="carousel__image h-fit w-[4rem] max-w-[4rem]" src="../assets/vectors/logos/git.svg" alt="" />
+            </div>
+            <div class="carousel__content icon">
+                <img class="carousel__image h-fit w-[4rem] max-w-[4rem]" src="../assets/vectors/logos/go.svg" alt="" />
+            </div>
+            <div class="carousel__content icon">
+                <img class="carousel__image h-fit w-[4rem] max-w-[4rem]"
+                    src="../assets/vectors/logos/python-outline.svg" alt="" />
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- dialog -->
+<dialog
+    class="backdrop:bg-black-dh backdrop:bg-opacity-65 backdrop:blur-md w-[88vw] md:w-2/3 lg:w-[44%] max-h-[85%] font-space-mono"
+    id="hitMeUpDialog">
+    <div class="bg__grid">
+        <!-- <div class="grid__block"></div> -->
+    </div>
+    <div class="btn__close flex flex-row justify-between bg-orange-dh mb-3 p-3 pr-6">
+        <h3 class="card-title font-bold text-[#fff] pl-9">Hit Me Up</h3>
+        <button id="btnCloseHmuForm"
+            class="text-[#fff] text-center w-6 rounded-md  hover:text-orange-dh hover:bg-[#fff]  ">
+            <img src="../assets/vectors/close-small.svg" class="filter--white hover:!filter--orange">
+        </button>
+    </div>
+
+    <form class="flex flex-col p-3 px-12 gap-3" id="formHitMeUp" action="/" method="GET">
+        <div class="grid grid-rows-1 sm:grid-cols-2 gap-3">
+            <div class="form__group">
+                <label class="text-black-dh text-sm" for="hmuFirstname">First name<sup>*</sup></label>
+                <input placeholder="Bruce" type="text" id="hmuFirstname" name="Firstname"
+                    class="pointer-events-auto border-[2px] border-black-dh w-full px-4 py-2" maxlength="20"
+                    minlength="3" required />
+                <small hidden id="hmuFirstnameErr" class="form--error text-orange-dh text-sm">please enter your
+                    firstname</small>
+            </div>
+            <div class="form__group">
+                <label class="text-black-dh text-sm" for="hmuLastname">Last name<sup>*</sup></label>
+                <input placeholder="Wayne" type="text" id="hmuLastname" name="Lastname"
+                    class="pointer-events-auto border-[2px] border-black-dh w-full px-4 py-2" maxlength="20"
+                    minlength="3" required />
+                <small hidden id="hmuLastnameErr" class="form--error text-orange-dh text-sm">please enter your
+                    lastname</small>
+            </div>
+        </div>
+
+        <div class="form__group grid">
+            <label class="text-black-dh text-sm" for="hmuEmail">E-Mail<sup>*</sup></label>
+            <input placeholder="Batman@Wayne.co" id="hmuEmail" type="email" name="E-mail"
+                class="pointer-events-auto border-[2px] border-black-dh px-4 py-2" required />
+            <small hidden id="hmuEmailErr" class="form--error text-orange-dh text-sm">please enter your email</small>
+        </div>
+
+        <div class="form__group grid h-fit">
+            <label class="text-black-dh text-sm" for="hmuReason">Reason</label>
+            <div for="hmuReason" id="hmuReasonList"
+                class="bg-[#fff] flex flex-row flex-wrap bg-white border-[2px] border-black-dh w-full gap-3 px-4 py-2 h-fit min-h-10 items-center">
+                <!-- <span class="rounded-xl bg-orange-dh font-semibold text-[#fff] flex flex-row gap-3 h-[1.6em] px-2 items-start">thing <button id="reason1">x</button></span> -->
+                <input id="hmuReason" type="text" name="Reason"
+                    class="pointer-events-auto w-fit focus-visible:outline-none pl-1" />
+            </div>
+            <small hidden id="hmuReasonErr" class="form--error text-orange-dh text-sm">reason can't be blank</small>
+        </div>
+
+        <div class="form__group grid">
+            <label class="text-black-dh text-sm" for="hmuDescription">What's up?<sup>*</sup></label>
+            <textarea placeholder="How can I help you?" type="text" id="hmuDescription" name="description" rows="3.6"
+                style="resize: none" class="pointer-events-auto border-[2px] border-black-dh pl-1" maxlength="240"
+                required></textarea>
+            <small hidden id="hmuDescriptionErr" class="form--error text-orange-dh text-sm">Tell me what's up</small>
+        </div>
+
+        <div class="card-body py-3 self-end">
+            <button type="submit" id="btnSubmitHmuForm" class="pointer-events-auto btn bg-orange-dh text-zinc-50">
+                HIT ME UP!
+            </button>
+        </div>
+    </form>
+</dialog>

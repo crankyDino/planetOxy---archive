@@ -1,0 +1,41 @@
+{
+  "name": "planetOxy",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "type": "module",
+  "author": "olepiob",
+  "scripts": {
+    "copy:html": "copyfiles -u 1 \"./src/**/*.html\" public",
+    "copy:assets": "copyfiles -u 1 ./src/assets/**/* public",
+    "copy": "npm-run-all --parallel copy:*",
+    "watch:scripts": "onchange \"src/scripts/**/*\" -- npm run build:ts && copy:scripts",
+    "watch:assets": "onchange \"src/assets/**/*\" -- npm run copy:assets",
+    "watch:html": "onchange \"./src/**/*.html\" -- npm run copy:html",
+    "watch:tailwind": "tailwindcss -i ./src/styles/style.css -o ./public/styles/style.css --watch",
+    "watch": "npm-run-all --parallel watch:*",
+    "serve": "browser-sync start --server public --files public",
+    "start": "tsc && npm-run-all copy --parallel watch serve",
+    "build": "tsc && npm-run-all copy:* build:*",
+    "build:ts": "tsc",
+    "build:tw": "tailwindcss -i ./src/styles/style.css -o ./public/styles/style.css"
+  },
+  "keywords": [],
+  "license": "ISC",
+  "devDependencies": {
+    "@babel/core": "^7.23.0",
+    "@babel/preset-env": "^7.22.20",
+    "@types/node": "^20.4.1",
+    "autoprefixer": "^10.4.2",
+    "babel-loader": "^9.1.3",
+    "browser-sync": "^2.27.7",
+    "copy-webpack-plugin": "^11.0.0",
+    "copyfiles": "^2.4.1",
+    "html-webpack-plugin": "^5.5.3",
+    "npm-run-all": "^4.1.5",
+    "onchange": "^7.1.0",
+    "tailwindcss": "^3.4.1",
+    "ts-loader": "^9.4.4",
+    "typescript": "^4.9.3"
+  }
+}

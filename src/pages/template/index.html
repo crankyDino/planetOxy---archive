@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en" style="scrollbar-width: none" class="scroll-smooth">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <!--styles-->
+  <link rel="icon" type="image/x-icon" href="../../assets/vectors/GLOBE.svg" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" />
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Comic+Neue:wght@300;400;700&family=Hanuman:wght@300;400;900&family=Montserrat:wght@200;300;400;900&family=Space+Mono:wght@400;700&display=swap" />
+  <!-- <link rel="stylesheet" href="./styles/noodles.css" /> -->
+  <link rel="stylesheet" href="../../styles/style.css" />
+  <!--scripts-->
+  <script src="../../pages/index.html" type="module"></script>
+  <script src="https://kit.fontawesome.com/b156652d59.js" crossorigin="anonymous"></script>
+  <title>Welcome To Planet Oxy</title>
+</head>
+
+<body class="bg-black-dh bg-light">
+  <canvas id="matrix__rain" style="
+        position: absolute;
+        z-index: -9;
+        margin: 0;
+        width: 100%;
+        opacity: 33%;
+      ">
+  </canvas>
+  <section class="flex flex-row bg-black-dh p-4 pb-6 container m-auto sticky top-0">
+    <nav class="flex flex-row w-full justify-between">
+      <a href="#" class="flex"><img src="../../assets/vectors/GLOBE.svg" alt="" /></a>
+
+      <ul class="flex flex-row gap-4 font-space-mono text-white-dh underline__list">
+        <li class="dh_underline h-[1.8em] hover:cursor-pointer">
+          <a href="./portfolio/portfolio.html">blog</a>
+        </li>
+        <li class="dh_underline h-[1.8em] hover:cursor-pointer">
+          <a href="./projects/projects.html">projects</a>
+        </li>
+        <li class="dh_underline h-[1.8em] text-orange-dh font-semibold hover:cursor-pointer">
+          <a href="#">portfolio</a>
+        </li>
+      </ul>
+    </nav>
+  </section>
+
+  <div class="sidebar">
+    <ul>
+      <li>
+        <a target="_blank" href="https://digitalhippie.xyz" class="!flex gap-3 items-center">
+          <p class="hidden text-white-dh text-nowrap text-[0px]">
+            Digital Hippie
+          </p>
+          <img style="max-width: 3rem; width: 1.72rem;" src="../../assets/vectors/dh_logo.svg" alt="" />
+        </a>
+      </li>
+      <li>
+        <a href="https://github.com/crankyDino" target="_blank" class="!flex gap-3 items-center"
+          ><p class="hidden text-white-dh text-nowrap text-[0px]">
+            Github
+          </p>
+          <img style="width: 1.72rem" src="../../assets/vectors/github.svg" alt="" />
+        </a>
+      </li>
+      <li>
+        <a href="https://www.linkedin.com/in/bamodise/" target="_blank" class="!flex gap-3 items-center">
+          <p class="hidden text-white-dh text-nowrap text-[0px]">
+            Linkedin
+          </p>
+          <img style="width: 1.72rem" src="../../assets/vectors/linkedin.svg" alt="" />
+        </a>
+      </li>
+      <li>
+        <a href="https://twitter.com/DigitalHippie_" target="_blank" class="!flex gap-3 items-center">
+          <p class="hidden text-white-dh text-nowrap text-[0px]">
+            Twitter
+          </p>
+          <img style="width: 1.72rem" src="../../assets/vectors/twitter.svg" alt="" /></a>
+        </a>
+      </li>
+    </ul>
+  </div>
+
+  <footer class="flex px-32 h-12 bg-orange-dh">
+    <!-- <p>something</p> -->
+    <div id="socials" class="m-auto flex flex-row gap-4 w-fit items-center">
+      <a target="_blank" href="https://digitalhippie.xyz"><img style="width: 1.8rem" src="../../assets/vectors/dh_logo.svg"
+          alt="" /></a>
+      <a target="_blank" href="https://github.com/DigitalHippieStudios"><img style="width: 1.4rem"
+          src="../../assets/vectors/github.svg" alt="" /></a>
+      <a target="_blank" href="https://www.linkedin.com/in/bamodise/"><img style="width: 1.4rem"
+          src="../../assets/vectors/linkedin.svg" alt="" /></a>
+      <a target="_blank" href="https://twitter.com/DigitalHippie_"><img style="width: 1.4rem"
+          src="../../assets/vectors/twitter.svg" alt="" /></a>
+    </div>
+    <!-- <p class="font-sm font-md-tablet weight-bold kern-1">Digital Hippie</p> -->
+  </footer>
+</body>
+
+<!-- dialog -->
+<dialog
+  class="backdrop:bg-black-dh backdrop:bg-opacity-65 backdrop:blur-md w-[88vw] md:w-2/3 lg:w-[44%] max-h-[85%] font-space-mono"
+  id="hitMeUpDialog">
+  <div class="bg__grid">
+    <!-- <div class="grid__block"></div> -->
+  </div>
+  <div class="btn__close flex flex-row justify-between bg-orange-dh mb-3 p-3 pr-6">
+    <h3 class="card-title font-bold text-[#fff] pl-9">Hit Me Up</h3>
+    <button id="btnCloseHmuForm" class="text-[#fff] text-center w-6 rounded-md  hover:text-orange-dh hover:bg-[#fff]  ">
+      <img src="../../assets/vectors/close-small.svg" class="filter--white hover:!filter--orange">
+    </button>
+  </div>
+
+  <form class="flex flex-col p-3 px-12 gap-3" id="formHitMeUp" action="/" method="GET">
+    <div class="grid grid-rows-1 sm:grid-cols-2 gap-3">
+      <div class="form__group">
+        <label class="text-black-dh text-sm" for="hmuFirstname">First name<sup>*</sup></label>
+        <input placeholder="Bruce" type="text" id="hmuFirstname" name="Firstname"
+          class="pointer-events-auto border-[2px] border-black-dh w-full px-4 py-2" maxlength="20" minlength="3"
+          required  />
+        <small hidden id="hmuFirstnameErr" class="form--error text-orange-dh text-sm">please enter your firstname</small>
+      </div>
+      <div class="form__group">
+        <label class="text-black-dh text-sm" for="hmuLastname">Last name<sup>*</sup></label>
+        <input placeholder="Wayne" type="text" id="hmuLastname" name="Lastname"
+          class="pointer-events-auto border-[2px] border-black-dh w-full px-4 py-2" maxlength="20" minlength="3"
+          required />
+        <small hidden id="hmuLastnameErr" class="form--error text-orange-dh text-sm">please enter your lastname</small>
+      </div>
+    </div>
+
+    <div class="form__group grid">
+      <label class="text-black-dh text-sm" for="hmuEmail">E-Mail<sup>*</sup></label>
+      <input placeholder="Batman@Wayne.co" id="hmuEmail" type="email" name="E-mail"
+        class="pointer-events-auto border-[2px] border-black-dh px-4 py-2" required />
+      <small hidden id="hmuEmailErr" class="form--error text-orange-dh text-sm">please enter your email</small>
+    </div>
+
+    <div class="form__group grid h-fit">
+      <label class="text-black-dh text-sm" for="hmuReason">Reason</label>
+      <div for="hmuReason" id="hmuReasonList"
+        class="bg-[#fff] flex flex-row flex-wrap bg-white border-[2px] border-black-dh w-full gap-3 px-4 py-2 h-fit min-h-10 items-center">
+        <!-- <span class="rounded-xl bg-orange-dh font-semibold text-[#fff] flex flex-row gap-3 h-[1.6em] px-2 items-start">thing <button id="reason1">x</button></span> -->
+        <input id="hmuReason" type="text" name="Reason"
+          class="pointer-events-auto w-fit focus-visible:outline-none pl-1" />
+      </div>
+      <small hidden id="hmuReasonErr" class="form--error text-orange-dh text-sm">reason can't be blank</small>
+    </div>
+
+    <div class="form__group grid">
+      <label class="text-black-dh text-sm" for="hmuDescription">What's up?<sup>*</sup></label>
+      <textarea placeholder="How can I help you?" type="text" id="hmuDescription" name="description" rows="3.6"
+        style="resize: none" class="pointer-events-auto border-[2px] border-black-dh pl-1" maxlength="240"
+        required></textarea>
+      <small hidden id="hmuDescriptionErr" class="form--error text-orange-dh text-sm">Tell me what's up</small>
+    </div>
+
+    <div class="card-body py-3 self-end">
+      <button type="submit" id="btnSubmitHmuForm" class="pointer-events-auto btn bg-orange-dh text-zinc-50">
+        HIT ME UP!
+      </button>
+    </div>
+  </form>
+</dialog>
+
+</html>
